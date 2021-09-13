@@ -48,7 +48,7 @@
                             <author>Emily Dickinson</author>
                             <editor>Thomas H. Johnson</editor>
                             <pub type="Place">Boston</pub> <!-- Added the word type and an equal sign and quotation marks around place, took out the other word place in the end tag. -->
-                            <publisher>Little, Brown and Company</publisher> <!-- Took out the & sign and wrote the word and -->
+                            <publisher>Little, Brown and Company</publisher> <!-- Took out the & sign and wrote the word and(that is wrong) instead of changing the document you would do &amp; -->
                             <date>1961</date>
                         </bibl> <!-- Missing end element for bibl tag -->
                     </witness>
