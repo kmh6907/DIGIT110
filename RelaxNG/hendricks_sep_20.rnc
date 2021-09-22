@@ -1,16 +1,16 @@
 start = xml 
-xml = element xml {source, text}
+xml = element xml {source, textElement} #add the word Element beside the word text 
 source = element source {title, altTitle, author, pubPlace, publisher, date, note}
 
 title = element title {level, text}
-level = attribute level {text}
+level = attribute level {"book" | "inner"}
 
 altTitle = element altTitle {text}
 
 author = element author {text}
 
 pubPlace = element pubPlace {where, text}
-where = attribute where {text}
+where = attribute where {"NYC" | text}
 
 publisher = element publisher {text}
 
@@ -19,21 +19,21 @@ when = attribute when {xsd:gYear}
 
 note = element note {text}
 
-text = element text {poem+}
-poem = element poem {id, title+, lineGroup+, }
+textElement = element textElement {poem+}
+poem = element poem {id, title+, lineGroup+}
 
-id = attribute id {text}
+id = attribute id {"harlem" | "goodMorning" | text}
 
 title = element title {level, text}
 level = attribute level {text}
 
 lineGroup = element lineGroup {line}
-line = element line {n, placeName, place, motif, text}
+line = element line {n, mixed{(placeName, place, motif, emph)*}}
 
 n = attribute n {xsd:integer}
 
 placeName = element placeName {ref, text}
-ref = attribute ref {text}
+ref = attribute ref {"NYC" | "NYC-Harlem" | "NYC-Man" | "MYC-PennSt" | "PR" | "Cuba" | "Ha" | "Ja" | }
 
 place = element place {type, ref, text}
 type = attribute type {text}
