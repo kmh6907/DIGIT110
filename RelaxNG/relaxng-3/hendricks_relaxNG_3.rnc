@@ -5,11 +5,9 @@ letter = element letter {n, heading, intro, date, place, beginning, body, ending
 n = attribute n {xsd:integer}
 
 heading = element heading {n, text}
-n = attribute n {xsd:integer}
 
 intro = element intro {n | name+ | text}
-n = attribute n {xsd:integer}
-name = element name {text}
+name = element name {text*}
 
 date = element date {when, text}
 when = attribute when {xsd:gYear}
@@ -18,16 +16,10 @@ place = element place {text}
 
 beginning = element beginning {text}
 
-body = element body {n, {(literature | color | bodypart | name | place)* }}
-n = attribute n {xsd:integer}
+body = element body { mixed{(n |literature | color | bodypart | name | place)* }}
 literature = element literature {text}
 color = element color {text}
 bodypart = element bodypart {text}
-name = element name {text}
-place = element place {text}
 
 ending = element ending {n, text}
-n = attribute n {xsd:integer}
-
-name = element name {text}
 
