@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?xml-model href="hendricks_relaxNG_3.rnc" type="application/relax-ng-compact-syntax"?>
 <xml>
     <letter n="1">
@@ -7,7 +8,8 @@
                 <name>sir Edward Clark,</name>
             <name>Wilde's</name> attorney. Although the letter lends support to the defense case,
                 <name>Clark</name> chose to introduce the letter to prevent the defense from
-            introducing the letter in a more dramatic fashion during its case.</intro>
+            introducing the letter in a more dramatic fashion during its case.
+        </intro>
         <date when="1893">January 1893</date>
         <place>Babbacombe Cliff</place>
         <beginning>My Own Boy,</beginning>

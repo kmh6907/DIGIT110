@@ -1,13 +1,13 @@
-start = xml
-xml = element xml {letter}
+start = root
+root = element xml {letter}
 letter = element letter {n, heading, intro, date, place, beginning, body, ending, name}
 
 n = attribute n {xsd:integer}
 
 heading = element heading {n, text}
 
-intro = element intro {n | name+ | text}
-name = element name {text*}
+intro = element intro {n, mixed{name+}}
+name = element name {text}
 
 date = element date {when, text}
 when = attribute when {xsd:gYear}
@@ -16,10 +16,9 @@ place = element place {text}
 
 beginning = element beginning {text}
 
-body = element body { mixed{(n |literature | color | bodypart | name | place)* }}
+body = element body { mixed{(n | literature | color | bodypart | name | place)* }}
 literature = element literature {text}
 color = element color {text}
 bodypart = element bodypart {text}
 
 ending = element ending {n, text}
-
