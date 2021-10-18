@@ -1,0 +1,21 @@
+# INSTRUCTIONS: PLEASE SAVE LOCALLY OUTSIDE THE TEXT-ENCODING-HUB 
+# ONLY CHANGE THE RELAX NG FILE. CORRECT THE SCHEMA, ASSOCIATE IT WITH THE XML
+# AND MAKE FURTHER CHANGES TO THE SCHEMA SO IT VALIDATES THE XML.
+start = xml
+xml = element xml {prologue?, body} #simplified content, added spaces, prologue and text out of sequence 
+
+body = element body {sentence*} #fixed spelling on sentance to sentence
+
+prologue = element prologue {who, mixed{(date | where)* }} #added equal sign between prologue and element
+#added mixed() content and took out word text 
+date = element date {when?, text} #took out quotation marks and changed repetition indicator 
+where = element where {location*, text}
+when = attribute when {text}
+location = attribute location {text}
+
+sentence = element sentence {n, who?, mixed{ (event | where | person)*} }
+#changed this to mixed content 
+person = element person {who}
+event = attribute event {text}
+n = attribute n {xsd:integer}
+who = attribute who {text}
